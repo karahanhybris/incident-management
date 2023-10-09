@@ -7,3 +7,7 @@ service ProcessorService {
   entity Urgency as projection on my.Urgency;
   entity Status as projection on my.Status;
 }
+
+extend projection ProcessorService.Customers with {
+  firstName || ' ' || lastName as name: String
+}
